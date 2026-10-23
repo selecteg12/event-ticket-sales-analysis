@@ -8,6 +8,12 @@ An end-to-end analysis of event ticket orders from **June to October 2024**, com
 
 [Notebook](research.ipynb) · [SQL queries](analysis.sql) · [Interactive dashboard](https://datalens.yandex/l4t1anvif4bm5?tab=mg)
 
+## Dashboard preview
+
+![Saved DataLens dashboard showing ticket revenue, orders, buyers, weekly trends, devices, and event categories](assets/dashboard-overview.jpg)
+
+Saved screenshot of the original Russian-language dashboard. Figures reflect the filters shown in the capture and may differ from the source extract and processed Python sample. This static preview remains available independently of the live dashboard's data connection.
+
 ## Objective
 
 Explore seasonal changes in demand, identify the main regions and ticket partners, and compare ordering patterns across device types.
