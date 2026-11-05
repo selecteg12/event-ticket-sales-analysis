@@ -1,46 +1,33 @@
+**English** | [Русский](README.ru.md)
+
 # Event Ticket Sales Analysis
 
 ![Event Ticket Sales Analysis](assets/cover.svg)
 
-An end-to-end analysis of event ticket orders from **June to October 2024**, combining SQL extracts, Python exploration, and an interactive dashboard.
-
-**PostgreSQL · Python · pandas · DataLens**
+An analysis of ticket orders from **June to October 2024** using PostgreSQL, Python and DataLens. It looks at seasonal demand, customer activity, regions, ticket partners and devices.
 
 [Notebook](research.ipynb) · [SQL queries](analysis.sql) · [Interactive dashboard](https://datalens.yandex/l4t1anvif4bm5?tab=mg)
 
-## Dashboard preview
+## Dashboard
 
-![Saved DataLens dashboard showing ticket revenue, orders, buyers, weekly trends, devices, and event categories](assets/dashboard-overview.jpg)
+![Revenue, orders, buyers, weekly trends, devices and event categories](assets/dashboard-overview.jpg)
 
-Saved screenshot of the original Russian-language dashboard. Figures reflect the filters shown in the capture and may differ from the source extract and processed Python sample. This static preview remains available independently of the live dashboard's data connection.
+The dashboard is in Russian. The screenshot reflects its saved filters.
 
-## Objective
+## What I analysed
 
-Explore seasonal changes in demand, identify the main regions and ticket partners, and compare ordering patterns across device types.
+- Revenue, orders, buyers and weekly trends from SQL extracts.
+- Order records joined with event information and exchange rates.
+- Differences between event categories, regions, ticket partners and devices.
 
-## Work completed
+In the processed sample, theatre and sports took a larger share of orders in autumn while the concert share declined. Around **53% of orders** came from the three largest regions, and most orders were placed on mobile devices.
 
-- Prepared SQL extracts and calculated revenue, orders, buyers, and weekly trends.
-- Joined order records with event information and exchange rates.
-- Compared event categories, regions, ticket partners, and devices.
-- Built a dashboard with filters and key business indicators.
+These findings describe the supplied platform data. They do not show why demand changed or estimate shares of the entire ticket market.
 
-## Key findings
+## Data and reproduction
 
-- Theatre and sports accounted for a larger share of orders in autumn, while the concert share declined in the processed sample.
-- Around **53% of orders** in that sample came from the three largest regions.
-- Mobile devices accounted for most orders.
+The source extract contains **290,849 orders**; the processed Python sample contains **214,408**. Cleaning and duplicate-handling rules affect the results. The SQL dashboard and Python notebook use different data slices.
 
-These findings describe the supplied platform data. They do not establish the causes of changes in demand or represent shares of the entire ticket market.
+`research.ipynb` contains preparation, exploration and statistical comparisons. It needs the original order, event and exchange-rate CSV exports under `/datasets`. `analysis.sql` contains the SQL extracts and calculations. Source data and a live PostgreSQL connection are not included.
 
-## Files
-
-- `research.ipynb` — data preparation, exploratory analysis, and statistical comparisons.
-- `analysis.sql` — SQL calculations and extracts.
-- The linked dashboard provides an interactive view of the business indicators.
-
-## Data
-
-The source extract contains **290,849 orders**; the processed Python sample contains **214,408**. Findings depend on the cleaning and duplicate-handling rules. The SQL dashboard and Python notebook use different slices of the data.
-
-The notebook requires the original order, event, and exchange-rate CSV exports under `/datasets`. Source data and a live PostgreSQL connection are not included. Notebook outputs have been cleared for the English version; a complete rerun has not been performed.
+Notebook outputs were cleared for the English version; that version has not been fully rerun.
