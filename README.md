@@ -12,7 +12,7 @@ An analysis of ticket orders from **June to October 2024** using PostgreSQL, Pyt
 
 ![Revenue, orders, buyers, weekly trends, devices and event categories](assets/dashboard-overview.jpg)
 
-The dashboard is in Russian. The screenshot reflects its saved filters.
+The dashboard screenshot shows **281,578 orders** with the date filter set to **10 June–1 November 2024**. No region, currency, or event filters are selected.
 
 ## What I analysed
 
@@ -26,8 +26,14 @@ These findings describe the supplied platform data. They do not show why demand 
 
 ## Data and reproduction
 
-The source extract contains **290,849 orders**; the processed Python sample contains **214,408**. Cleaning and duplicate-handling rules affect the results. The SQL dashboard and Python notebook use different data slices.
+| Source | Orders | Scope |
+| --- | ---: | --- |
+| DataLens dashboard | 281,578 | Orders shown with the filters in the screenshot. |
+| CSV for the Python analysis | 290,849 | Orders from mobile and desktop devices before cleaning. |
+| Cleaned Python sample | 214,408 | Orders remaining after revenue filtering, removal of potential duplicates, and the join with event data. |
+
+The dashboard and notebook use different slices of the data. The decrease from 290,849 to 214,408 comes from the Python cleaning steps.
 
 `research.ipynb` contains preparation, exploration and statistical comparisons. It needs the original order, event and exchange-rate CSV exports under `/datasets`. `analysis.sql` contains the SQL extracts and calculations. Source data and a live PostgreSQL connection are not included.
 
-Notebook outputs were cleared for the English version; that version has not been fully rerun.
+The notebook has no saved cell outputs. It has not been rerun in full since translation.
